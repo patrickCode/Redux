@@ -1,5 +1,4 @@
 const { createStore } = require('Redux');
-const expect = require('expect');
 
 const counter = (state = 0, action) => {
     if (action.type === 'INCREMENT')

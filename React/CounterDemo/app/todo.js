@@ -1,4 +1,6 @@
-const { createStore, combineReducers } = require("Redux");
+// The refactored code with presentational and container components are in the todos folder
+
+const { combineReducers } = require("Redux");
 var React = require("react");
 const { Component } = React;
 
@@ -85,7 +87,7 @@ const getVisibleTodos = (todos, filter) => {
 };
 
 let todoId = 0;
-export class TodoComponent extends Component {
+export class TodosComponent extends Component {
   render() {
       const {
           todos,

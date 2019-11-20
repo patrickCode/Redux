@@ -79,13 +79,13 @@ class App extends React.Component {
 }
 
 const render = () => {
-  // ReactDOM.render(<App />, document.getElementById("app"));
-  ReactDOM.render(
-    <Provider store={todoStore}>
-      <TodoApp />
-    </Provider>,
-    document.getElementById("app")
-  );
+  ReactDOM.render(<App />, document.getElementById("app"));
+  // ReactDOM.render(
+  //   <Provider store={todoStore}>
+  //     <TodoApp />
+  //   </Provider>,
+  //   document.getElementById("app")
+  // );
 };
 
 store.subscribe(render);

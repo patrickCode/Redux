@@ -5,8 +5,9 @@ const { combineReducers } = require("Redux");
 var React = require("react");
 const { Component } = React;
 const { VisibleTodoList } = require("./visibleTodoList");
-const { AddTodo } = require("./addTodo");
+const { AddTodo, AddTodoConnected } = require("./addTodo");
 const { Footer } = require("./footer");
+const { object } = require("prop-types");
 
 const visibilityFilter = (state = "SHOW_ALL", action) => {
   switch (action.type) {
@@ -84,15 +85,18 @@ export class TodoApp extends Component {
       <div>
         {/* Presentational - <AddTodo onAddClick={text => this.props.onAdd(todoId++, text)} /> */}
         {/* <AddTodo store={store} /> */}
-        <AddTodo />
-        
+        <AddTodoConnected />
+
         {/*  Presentational - <TodoList todos={getVisibleTodos(todos, filter)} onTodoClick={this.props.onToggle} /> */}
         {/* Passing Store via props <VisibleTodoList store={store} /> */}
         <VisibleTodoList />
-        
+
         {/*  Presentational -  <Footer currentFilter={filter} onFilterClick={this.props.setFilter} /> */}
         {/* <Footer store={store} /> */}
       </div>
     );
   }
 }
+TodoApp.contextTypes = {
+  store: object
+};
